@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Инструкции · Служба поддержки</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+  <div class="topbar" id="topbar" style="display:none;">
+    <div class="topbar-left">
+      <img class="logo" src="assets/logo.png" alt="Банк Левобережный">
+      <div class="divider"></div>
+      <div class="brand" id="brandLabel">ИНСТРУКЦИЯ</div>
+    </div>
+    <button class="back-btn" onclick="goMenu()">← Все инструкции</button>
+  </div>
+
+  <div class="menu" id="menuScreen">
+    <img class="menu-logo" src="assets/logo.png" alt="Банк Левобережный">
+    <h1>База знаний · IT-поддержка</h1>
+    <p class="sub">Короткие пошаговые инструкции. Один шаг — один экран. Открывайте нужную и идите по шагам, не читая всё сразу.</p>
+    <!-- меню собирается автоматически движком из window.INSTRUCTIONS -->
+  </div>
+
+  <div class="stage" id="stageScreen" style="display:none;"></div>
+</div>
+
+<!-- ==========================================================
+     ПОДКЛЮЧЕНИЕ ИНСТРУКЦИЙ.
+     Чтобы добавить новую инструкцию — положить файл в /data/
+     и дописать сюда одну строку <script src="data/ИМЯ.js">.
+     Порядок подключения не важен.
+     ========================================================== -->
+<script>window.INSTRUCTIONS = {};</script>
+<script src="data/01-scan.js"></script>
+<script src="data/02-rollers.js"></script>
+<script src="data/03-ebs.js"></script>
+<script src="data/04-atm-inkassaciya.js"></script>
+<!-- <script src="data/05-новая-инструкция.js"></script> -->
+
+<!-- движок подключается последним -->
+<script src="engine.js"></script>
+</body>
+</html>
